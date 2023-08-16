@@ -6,16 +6,19 @@ import Turnos from './Turnos';
 function App(){  
   
   const [pacientes,setPacientes]=useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const addPatient= (patient) => {
     setPacientes([...pacientes,patient]);
     console.log(pacientes)
-                                 };
+   };
   
+   
 
  function borrar(){
-    setPacientes([]);
-  }
+    setPacientes([])
+    
+  };
 
 
   return (
@@ -25,7 +28,7 @@ function App(){
       <Turnos pacientes={pacientes}/>
 
       <button onClick={borrar}>Borrar la lista</button>  
-
+      {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
    </div>
   );
 }

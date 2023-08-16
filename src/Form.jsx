@@ -1,22 +1,37 @@
 import { useState } from "react";
 function Form({onAddPatient}){
-
     const [nombre,setNombre]=useState("");
     const [apellido,setApellido]=useState("");
 
     const handleSubmit = (e)=>{
-        
-        e.preventDefault();
-
-        console.log(nombre);
-        console.log(apellido);
+         e.preventDefault();
+         console.log(nombre);
+         console.log(apellido);
+         
         
         if(nombre && apellido){
             onAddPatient({nombre,apellido});
             setNombre("");
-            setApellido("");
-        }
+            setApellido(""); 
+
+
+    const  validateNombre = (nombre) =>{
+       }// Validación de longitud mínima y espacios en blanco al comienzo
+         if (newUsername.length < 3) {
+        setErrorMessage('El nombre de usuario debe tener al menos 3 caracteres');
+      } else if (newUsername.trim() !== newUsername) {
+        setErrorMessage('El nombre de usuario no puede empezar con un espacio en blanco');
+      } else {
+        setErrorMessage('');
+
     }
+      
+      }
+
+
+    }
+
+    
 
     return (
 
@@ -30,3 +45,6 @@ function Form({onAddPatient}){
 }
 
 export default Form;
+
+
+    
